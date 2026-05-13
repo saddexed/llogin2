@@ -5,12 +5,13 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace llogin
 {
     class Program
     {
-        static readonly string CurrentVersion = "1.0.2";
+        static readonly string CurrentVersion = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion ?? "unknown";
 
         static async Task<int> Main(string[] args)
         {
