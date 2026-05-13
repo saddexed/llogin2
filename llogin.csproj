@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RuntimeIdentifiers>win-x64;linux-x64;osx-x64;osx-arm64</RuntimeIdentifiers>
+    
+    <!-- Default Publish Properties -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <PublishTrimmed>true</PublishTrimmed>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <Target Name="PublishAll">
+    <ItemGroup>
+      <RuntimeToPublish Include="win-x64" Ext=".exe" />
+      <RuntimeToPublish Include="linux-x64" Ext="" />
+      <RuntimeToPublish Include="osx-x64" Ext="" />
+      <RuntimeToPublish Include="osx-arm64" Ext="" />
+    </ItemGroup>
+
+    <MSBuild Projects="$(MSBuildProjectFullPath)"
+             Targets="Publish"
+             Properties="RuntimeIdentifier=%(RuntimeToPublish.Identity);Configuration=Release;PublishDir=$(MSBuildProjectDirectory)\publish\tmp-%(RuntimeToPublish.Identity)\" />
+
+    <Move SourceFiles="$(MSBuildProjectDirectory)\publish\tmp-%(RuntimeToPublish.Identity)\llogin%(RuntimeToPublish.Ext)"
+          DestinationFiles="$(MSBuildProjectDirectory)\publish\llogin-%(RuntimeToPublish.Identity)%(RuntimeToPublish.Ext)" />
+    
+    <RemoveDir Directories="$(MSBuildProjectDirectory)\publish\tmp-%(RuntimeToPublish.Identity)\" />
+  </Target>
+
+</Project>
