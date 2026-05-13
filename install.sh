@@ -6,12 +6,12 @@ OS_TYPE=$(uname -s)
 ARCH_TYPE=$(uname -m)
 
 if [ "$OS_TYPE" == "Linux" ]; then
-    BINARY_URL="https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/linux-x64/llogin"
+    BINARY_URL="https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/llogin-linux-x64"
 elif [ "$OS_TYPE" == "Darwin" ]; then
     if [ "$ARCH_TYPE" == "arm64" ]; then
-        BINARY_URL="https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/osx-arm64/llogin"
+        BINARY_URL="https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/llogin-osx-arm64"
     else
-        BINARY_URL="https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/osx-x64/llogin"
+        BINARY_URL="https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/llogin-osx-x64"
     fi
 fi
 

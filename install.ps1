@@ -1,6 +1,6 @@
 $installDir = "$env:LOCALAPPDATA\Programs\llogin"
 $exePath = "$installDir\llogin.exe"
-$repoUrl = "https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/win-x64/llogin.exe"
+$repoUrl = "https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/llogin-win-x64.exe"
 
 Write-Host "Installing LLogin..." -ForegroundColor Cyan
 
