@@ -29,5 +29,4 @@ bld/
 .vscode/
 
 # User-created publish folders
-publish/
 legacy_src/
