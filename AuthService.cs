@@ -46,14 +46,6 @@ namespace llogin
                 {
                     return Regex.Replace(match.Groups[1].Value, @"@lpu\.com$", "", RegexOptions.IgnoreCase);
                 }
-
-#if DEBUG
-                if (!content.Contains("name=\"username\"", StringComparison.OrdinalIgnoreCase))
-                {
-                    File.WriteAllText(StorageService.GetDebugHtmlPath(), content);
-                    Console.WriteLine($"\n[DEBUG-GETUSER] Response saved to: {StorageService.GetDebugHtmlPath()}");
-                }
-#endif
                 return null;
             }
             catch (Exception ex)
@@ -104,11 +96,6 @@ namespace llogin
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"[FAIL] Login failed for {username}.");
                 Console.ResetColor();
-
-#if DEBUG
-                File.WriteAllText(StorageService.GetDebugHtmlPath(), responseContent);
-                Console.WriteLine($"[DEBUG] Full response saved to: {StorageService.GetDebugHtmlPath()}");
-#endif
                 StorageService.WriteLogEntry(username, "Login", "failed");
                 return false;
             }
