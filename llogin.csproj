@@ -1,10 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+ <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64;linux-x64;osx-x64;osx-arm64</RuntimeIdentifiers>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <InformationalVersion>dev</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <RuntimeIdentifiers>win-x64;linux-x64;osx-x64;osx-arm64</RuntimeIdentifiers>
     
     <!-- Default Publish Properties -->
@@ -15,7 +18,7 @@
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
-  <Target Name="PublishAll">
+  <Target Name="all">
     <ItemGroup>
       <RuntimeToPublish Include="win-x64" Ext=".exe" />
       <RuntimeToPublish Include="linux-x64" Ext="" />

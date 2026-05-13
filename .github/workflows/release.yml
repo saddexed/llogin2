@@ -40,7 +40,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Build and Publish
-        run: dotnet build -t:PublishAll -c Release -p:Version=${{ env.APP_VERSION }}
+        run: dotnet publish -c Release -p:Version=${{ env.APP_VERSION }}
 
       - name: Move latest tag
         if: github.event_name == 'push'

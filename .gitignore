@@ -30,3 +30,4 @@ bld/
 
 # User-created publish folders
 legacy_src/
+/publish

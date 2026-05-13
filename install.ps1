@@ -1,8 +1,8 @@
 $installDir = "$env:LOCALAPPDATA\Programs\llogin"
 $exePath = "$installDir\llogin.exe"
-$repoUrl = "https://raw.githubusercontent.com/saddexed/llogin2/install-script/publish/llogin-win-x64.exe"
+$repoUrl = "https://github.com/saddexed/llogin2/releases/latest/download/llogin-win-x64.exe"
 
-Write-Host "Installing LLogin..." -ForegroundColor Cyan
+Write-Host "Installing llogin..." -ForegroundColor Cyan
 
 if (!(Test-Path $installDir)) {
     New-Item -ItemType Directory -Path $installDir -Force | Out-Null

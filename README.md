@@ -1,4 +1,4 @@
-# LLogin - LPU Wifi Autologin
+# llogin - LPU Wifi Autologin
 
 A cross-platform .NET 10 console application for automatic login to the LPU captive portal.
 

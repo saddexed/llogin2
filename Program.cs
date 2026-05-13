@@ -182,7 +182,8 @@ namespace llogin
             }
             else
             {
-                Console.WriteLine("Task removal logic is being updated...");
+                // Write this later
+                // Console.WriteLine("Task removal logic is being updated...");
                 return 0;
             }
         }
@@ -192,23 +193,18 @@ namespace llogin
             Console.WriteLine("LLogin - LPU Wifi Autologin");
             Console.WriteLine("================================");
             Console.WriteLine("Usage:");
-            Console.WriteLine("  llogin [user] [pass]            Login with specified or stored credentials");
+            Console.WriteLine("  llogin <user> <pass>            Login with specified or stored credentials");
             Console.WriteLine("  llogin -l, --logout             Logout of the current session");
             Console.WriteLine("  llogin -s, --status             Show current connection status and user");
             Console.WriteLine("  llogin -ls, --list              List all stored users");
-            Console.WriteLine("  llogin -a <user> <pass>         Add or update a user");
-            Console.WriteLine("  llogin -r <user>                Remove a stored user");
-            Console.WriteLine("  llogin -d <user>                Set a stored user as default");
+            Console.WriteLine("  llogin -a, --add <user> <pass>  Add or update a user");
+            Console.WriteLine("  llogin -r, --remove <user>      Remove a stored user");
+            Console.WriteLine("  llogin -d, --default <user>     Set a stored user as default");
             Console.WriteLine("  llogin -c, --clear              Remove all stored credentials");
-            Console.WriteLine("  llogin --task                   Setup auto-login task (Windows only)");
-            Console.WriteLine("  llogin --no-task                Remove auto-login task (Windows only)");
-            Console.WriteLine("\nOptions:");
+            Console.WriteLine("  llogin -t, --task               Setup auto-login task (Windows only)");
+            //Console.WriteLine("  llogin -nt, --no-task            Remove auto-login task (Windows only)");
             Console.WriteLine("  -h, --help                      Show this help message");
             Console.WriteLine("  -v, --version                   Show version information");
-            Console.WriteLine("\nExamples:");
-            Console.WriteLine("  llogin -a 11801234 pass123      Save an account");
-            Console.WriteLine("  llogin -d 11801234              Switch default account");
-            Console.WriteLine("  llogin --status                 Check connection state");
         }
     }
 }
